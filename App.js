@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+
+import {OpenSans_400Regular, OpenSans_700Bold, useFonts} from '@expo-google-fonts/open-sans';
+
+import React from 'react';
+import ShopNavigator from './src/navigators/ShopNavigator';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+
+  const [fontsLoaded] = useFonts({
+    OpenSans_400Regular,
+    OpenSans_700Bold
+  });
+
+  React.useEffect(() =>{
+    if(fontsLoaded){
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded])
+
+  if(!fontsLoaded){
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ShopNavigator />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
