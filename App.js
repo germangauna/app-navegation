@@ -3,7 +3,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import {OpenSans_400Regular, OpenSans_700Bold, useFonts} from '@expo-google-fonts/open-sans'; //importamos las fuentes
 
 import React from 'react';
-import ShopNavigator from './src/navigators/ShopNavigator';
+import ShopNavigator from './src/Navigators/ShopNavigator';
 
 SplashScreen.preventAutoHideAsync();
 

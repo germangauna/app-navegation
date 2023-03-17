@@ -1,12 +1,13 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
+
 import React from 'react'
 
-const CategoriesScreen = ({ navigation }) => {
+const CategoriesScreen = ({ navigation }) => { //se lo inyecta directamente a los hijos
     return (
         <View style={styles.screen}>
             <Text>CategoriesScreen</Text>
             <Button title="Ir a Products" onPress={() => { 
-                navigation.navigate('Products') 
+                navigation.navigate('Products') // products tiene que ser el mismo nombre de stacks
                 }} />
         </View>
     )

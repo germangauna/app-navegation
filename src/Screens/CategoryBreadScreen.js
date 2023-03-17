@@ -7,7 +7,7 @@ const CategoryBreadScreen = ({ navigation }) => {
     <View style={styles.screen}>
       <Text>CategoryBreadScreen</Text>
       <Button title="Ir a Detail" onPress={() => {
-        navigation.navigate('Detail')
+        navigation.navigate('Detail')// mismo name que stacks 'detail'
         }} />
     </View>
   )
