@@ -12,7 +12,7 @@ const CategoriesScreen = ({ navigation }) => { //se lo inyecta directamente a lo
         })
     }
 // asi los recibimos de la otra pantalla
-    const renderGridItem = ({ item }) = (<GridsItem item={item} onSelect={onSelectGridItem}/>)
+    const renderGridItem = ({ item }) = (<GridItem item={item} onSelect={onSelectGridItem}/>)
     
 
     
