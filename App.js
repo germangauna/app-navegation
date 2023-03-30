@@ -2,7 +2,7 @@ import * as SplashScreen from 'expo-splash-screen';
 
 import {OpenSans_400Regular, OpenSans_700Bold, useFonts} from '@expo-google-fonts/open-sans';
 
-import MainNavigator from './src/navigators/MainNavigator';
+import MainNavigator from './src/Navigators/MainNavigator';
 import { Provider } from 'react-redux';
 import React from 'react';
 import store from './src/store';
@@ -18,7 +18,7 @@ export default function App() {
 
   React.useEffect(() =>{
     if(fontsLoaded){
-      SplashScreen.hideAsync(); 
+      SplashScreen.hideAsync();
     }
   }, [fontsLoaded])
 
@@ -27,6 +27,8 @@ export default function App() {
   }
 
   return (
-    <ShopNavigator /> // lo primero que importamos
+    <Provider store={store}>
+      <MainNavigator />   
+    </Provider>
   );
 }
